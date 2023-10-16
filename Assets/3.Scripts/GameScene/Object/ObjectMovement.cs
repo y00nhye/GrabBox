@@ -28,6 +28,7 @@ public class ObjectMovement : MonoBehaviour
             if (!other.GetComponent<Picker>().isPick)
             {
                 other.GetComponent<Picker>().isPick = true;
+                
                 isGrab = true;
             }
         }

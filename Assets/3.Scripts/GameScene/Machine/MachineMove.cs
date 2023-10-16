@@ -22,6 +22,8 @@ public class MachineMove : MonoBehaviour
     private bool isPush = false; //push 버튼 누른 상태
     public bool isMoveUp = false; //기계가 올라가는 상태
 
+    [SerializeField] GameObject grabLight;
+
     //오브젝트 랜덤 생성 시 출구 막기
     private void Start()
     {
@@ -116,7 +118,6 @@ public class MachineMove : MonoBehaviour
     IEnumerator PushBtn_co()
     {
         isPush = true;
-
         while (machineYaxis.transform.localPosition.y > -0.18f)
         {
             machineYaxis.transform.localPosition += new Vector3(0, -speed, 0) * Time.deltaTime;
@@ -125,6 +126,8 @@ public class MachineMove : MonoBehaviour
         }
 
         machineYaxis.transform.localPosition = new Vector3(machineYaxis.transform.localPosition.x, -0.18f, machineYaxis.transform.localPosition.z);
+
+        grabLight.SetActive(false);
 
         yield return new WaitForSeconds(waitTime);
 
@@ -158,6 +161,8 @@ public class MachineMove : MonoBehaviour
         machineXaxis.transform.localPosition = new Vector3(1.3f, 1, -1);
         machineYaxis.transform.localPosition = new Vector3(1.3f, 0.8f, -1.7f);
         machineZaxis.transform.localPosition = new Vector3(2, 1, -1.7f);
+
+        grabLight.SetActive(true);
 
         isMoveUp = false;
         isPush = false;

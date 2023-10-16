@@ -29,7 +29,7 @@ public class DBController : Singleton<DBController>
     }
 
     //data 삽입 및 업데이트
-    public void DBInsert(string id, int record)
+   public void DBInsert(string id, int record)
     { 
         string select = "select * from user";
 

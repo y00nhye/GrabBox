@@ -5,6 +5,4 @@ using UnityEngine;
 public class Picker : MonoBehaviour
 {
     public bool isPick = false;
-
-
 }
