@@ -8,31 +8,13 @@ public class TimeRecordData
     public List<int> timeRecord = new List<int>();
 }
 
-public class RecordJson : MonoBehaviour
+public class RecordJson : Singleton<RecordJson>
 {
-    #region ΩÃ±€≈Ê
-    public static RecordJson instance = null;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    #endregion
-
     public TimeRecordData timeRecordData = new TimeRecordData();
 
     public void SaveRecord()
     {
-        timeRecordData.timeRecord.Add(GameManager.instance.timeRank);
+        timeRecordData.timeRecord.Add(GameManager.Instance.timeRank);
 
         string jsonData = JsonUtility.ToJson(timeRecordData, true);
 

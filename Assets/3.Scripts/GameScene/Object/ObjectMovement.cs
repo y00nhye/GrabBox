@@ -40,9 +40,9 @@ public class ObjectMovement : MonoBehaviour
             if (!machineMove.isMoveUp)
             {
                 transform.position = poolPos;
-                GameManager.instance.objectCount--;
+                GameManager.Instance.objectCount--;
 
-                countTxt.text = "남은 수 : " + GameManager.instance.objectCount;
+                countTxt.text = "남은 수 : " + GameManager.Instance.objectCount;
 
                 isGrab = false;
             }

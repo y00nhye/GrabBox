@@ -23,7 +23,7 @@ public class RecordController : MonoBehaviour
         recordBtn.SetActive(true);
     }
 
-    //기록 나타내기
+    //기록 나타내기 (Json)
     public void RecordWrite(List<int> record)
     {
         //기록 정렬
@@ -53,6 +53,26 @@ public class RecordController : MonoBehaviour
             for (int i = 0; i < 8; i++)
             {
                 recordTxt[i].text = record[i].ToString();
+            }
+        }
+    }
+
+    //기록 나타내기 (DB)
+    public void RecordWriteDB(List<string> record)
+    {
+        //기록 text에 옮기기
+        if (record.Count < 9)
+        {
+            for (int i = 0; i < record.Count; i++)
+            {
+                recordTxt[i].text = record[i];
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                recordTxt[i].text = record[i];
             }
         }
     }

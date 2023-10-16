@@ -22,12 +22,12 @@ public class Timer : MonoBehaviour
     {
         isStopTimer = true;
 
-        GameManager.instance.timeRank = currentTime;
+        GameManager.Instance.timeRank = currentTime;
     }
 
     IEnumerator TimerOn_co()
     {
-        while (!GameManager.instance.isGameOver && !isStopTimer)
+        while (!GameManager.Instance.isGameOver && !isStopTimer)
         {
             currentTime += 1;
 
