@@ -21,8 +21,6 @@ public class RecordJson : Singleton<RecordJson>
         string path = Path.Combine(Application.dataPath, "timeRecordData.json");
 
         File.WriteAllText(path, jsonData);
-
-        Debug.Log("save json");
     }
 
     public void LoadRecord()
